@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { storyContent } from "@/lib/constants";
 
 export default function StorySection() {
@@ -27,20 +27,28 @@ export default function StorySection() {
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <ImagePlaceholder
-              label={storyContent.part1.imageLabel}
-              aspectRatio="aspect-[4/3]"
-            />
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/8174_0.webp"
+                alt="Jack and Manap shaking hands at the HomHoh Coffee sign"
+                fill
+                className="object-cover"
+              />
+            </div>
           </AnimatedSection>
         </div>
 
         {/* Part 2: The Mission */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <AnimatedSection className="order-2 lg:order-1">
-            <ImagePlaceholder
-              label={storyContent.part2.imageLabel}
-              aspectRatio="aspect-[4/3]"
-            />
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/9174_0.webp"
+                alt="Jack with Manap and his family in front of the coffee trees"
+                fill
+                className="object-cover object-[center_30%]"
+              />
+            </div>
           </AnimatedSection>
           <AnimatedSection delay={0.2} className="order-1 lg:order-2">
             <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-brown-800 mb-6">

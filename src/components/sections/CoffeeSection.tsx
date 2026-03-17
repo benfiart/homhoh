@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import { coffeeCards } from "@/lib/constants";
 
 const stagger = {
@@ -25,7 +26,7 @@ export default function CoffeeSection() {
         <SectionHeading
           label="The Coffee"
           title="From Mountain to Cup"
-          subtitle="Hand-picked at elevation by families who have tended these mountains for generations."
+          subtitle="Hand-picked at 2,950–3,940 ft elevation by families who have tended these mountains for generations."
         />
 
         <motion.div
@@ -55,11 +56,62 @@ export default function CoffeeSection() {
           })}
         </motion.div>
 
-        {/* Full-width landscape */}
-        <ImagePlaceholder
-          label="Mountain panorama of Mae Hong Son coffee region"
-          aspectRatio="aspect-[21/9]"
-        />
+        {/* Photo grid - top row: wide landscape + portrait coffee shot */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          <AnimatedSection className="md:col-span-8">
+            <div className="relative aspect-[3/2] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/8186_0.webp"
+                alt="Jack and Manap walking among the coffee trees"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1} className="md:col-span-4">
+            <div className="relative aspect-[3/4] md:aspect-auto md:h-full min-h-[280px] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/9166_0.webp"
+                alt="Coffee beans and a freshly brewed cup"
+                fill
+                className="object-cover object-center"
+              />
+            </div>
+          </AnimatedSection>
+        </div>
+        {/* Bottom row: three equal landscape crops */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+          <AnimatedSection>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/9176_0.webp"
+                alt="Farmers harvesting coffee on the mountainside"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/9179_0.webp"
+                alt="Jack examining coffee branches on the farm"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/8187_0.webp"
+                alt="Manap showing Jack the coffee plants up close"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </AnimatedSection>
+        </div>
       </Container>
     </section>
   );

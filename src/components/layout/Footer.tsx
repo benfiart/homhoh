@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 py-16">
           {/* Brand */}
           <div className="space-y-6">
-            <a href="#" className="font-serif text-2xl font-bold text-cream-50">
+            <a href="#" className="font-serif text-2xl font-bold text-cream-50 block">
               HomHoh
             </a>
             <p className="text-cream-200/60 text-sm leading-relaxed max-w-xs">

@@ -2,6 +2,7 @@
 
 import { useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -55,7 +56,7 @@ export default function ImpactSection() {
           title="Where Your Dollar Goes"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left: Big stat */}
           <AnimatedSection className="text-center lg:text-left">
             <Counter />
@@ -79,6 +80,18 @@ export default function ImpactSection() {
             ))}
           </div>
         </div>
+
+        {/* Full-width photo below */}
+        <AnimatedSection className="mt-16">
+          <div className="relative aspect-[21/9] rounded-2xl overflow-hidden">
+            <Image
+              src="/images/9172_0.webp"
+              alt="Jack and Manap standing together at the HomHoh Coffee farm"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </AnimatedSection>
       </Container>
     </section>
   );

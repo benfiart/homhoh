@@ -21,7 +21,7 @@ export default function ContactSection() {
         <SectionHeading
           label="Contact"
           title="Let\u2019s Connect"
-          subtitle="Whether you're a roaster, a coffee shop, or just curious about our story."
+          subtitle="Whether you want to learn more, find us at the market, or just say hello."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -33,8 +33,8 @@ export default function ContactSection() {
                   Reach Out
                 </h3>
                 <p className="text-text-secondary leading-relaxed mb-6">
-                  We&apos;d love to hear from you. Whether you want to stock HomHoh Coffee,
-                  learn more about our farmers, or just say hello.
+                  We&apos;d love to hear from you. Whether you want to learn more about
+                  our farmers, find us at the market, or just say hello.
                 </p>
               </div>
               <div className="space-y-4">

@@ -24,7 +24,7 @@ export default function ReviewsSection() {
       <Container>
         <SectionHeading
           label="Reviews"
-          title="What Roasters Are Saying"
+          title="What People Are Saying"
         />
 
         <motion.div

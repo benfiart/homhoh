@@ -2,8 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { siteConfig } from "@/lib/constants";
 
 const stagger = {
@@ -34,15 +34,17 @@ export default function HeroSection() {
       ref={ref}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background image placeholder with Ken Burns effect */}
+      {/* Background image with Ken Burns effect */}
       <div
         className="absolute inset-0"
         style={{ animation: "kenBurns 20s ease-in-out infinite alternate" }}
       >
-        <ImagePlaceholder
-          label="Jack with Manap, his mother & grandmother"
-          aspectRatio=""
-          className="absolute inset-0 w-full h-full rounded-none border-0"
+        <Image
+          src="/images/8177_0.webp"
+          alt="Jack with Manap, his mother and grandmother"
+          fill
+          className="object-cover"
+          priority
         />
       </div>
 

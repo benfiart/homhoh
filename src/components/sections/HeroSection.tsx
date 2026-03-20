@@ -117,7 +117,7 @@ export default function HeroSection() {
               variants={fadeUp}
               className="mt-6 sm:mt-8 flex flex-row items-center gap-6 flex-wrap"
             >
-              <p className="max-w-lg text-cream-50/70 text-sm sm:text-lg leading-relaxed hero-text-shadow">
+              <p className="max-w-lg text-cream-50/90 text-sm sm:text-lg leading-relaxed hero-text-shadow">
                 {siteConfig.heroSubheading}
               </p>
               <div className="flex gap-3">

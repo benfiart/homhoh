@@ -78,7 +78,7 @@ export default function ContactSection() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-cream-50 border border-cream-200 text-brown-900 placeholder:text-text-muted focus:outline-none focus:border-brown-600/50 focus:ring-1 focus:ring-brown-600/20 transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded-lg bg-cream-50 border border-cream-200 text-brown-900 placeholder:text-text-muted focus-visible:outline-none focus-visible:border-brown-600 focus-visible:ring-2 focus-visible:ring-brown-600/30 transition-colors text-sm"
                     placeholder="Your name"
                   />
                 </div>
@@ -91,7 +91,7 @@ export default function ContactSection() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-cream-50 border border-cream-200 text-brown-900 placeholder:text-text-muted focus:outline-none focus:border-brown-600/50 focus:ring-1 focus:ring-brown-600/20 transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded-lg bg-cream-50 border border-cream-200 text-brown-900 placeholder:text-text-muted focus-visible:outline-none focus-visible:border-brown-600 focus-visible:ring-2 focus-visible:ring-brown-600/30 transition-colors text-sm"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -104,7 +104,7 @@ export default function ContactSection() {
                     name="message"
                     rows={4}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-cream-50 border border-cream-200 text-brown-900 placeholder:text-text-muted focus:outline-none focus:border-brown-600/50 focus:ring-1 focus:ring-brown-600/20 transition-colors text-sm resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-cream-50 border border-cream-200 text-brown-900 placeholder:text-text-muted focus-visible:outline-none focus-visible:border-brown-600 focus-visible:ring-2 focus-visible:ring-brown-600/30 transition-colors text-sm resize-none"
                     placeholder="Tell us about your interest in HomHoh Coffee..."
                   />
                 </div>

@@ -38,6 +38,12 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <a
+        href="#story"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brown-600 focus:text-cream-50 focus:rounded-lg focus:text-sm"
+      >
+        Skip to content
+      </a>
       <Header />
       <main>
         <HeroSection />

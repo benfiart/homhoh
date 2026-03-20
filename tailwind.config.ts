@@ -25,7 +25,7 @@ const config: Config = {
           800: "#1E3F2B",
         },
         "text-secondary": "#6B5B4E",
-        "text-muted": "#9C8B7D",
+        "text-muted": "#7A6B5D",
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],

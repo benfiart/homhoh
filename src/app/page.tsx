@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import StorySection from "@/components/sections/StorySection";
+import ManopSection from "@/components/sections/ManopSection";
 import CoffeeSection from "@/components/sections/CoffeeSection";
 import ImpactSection from "@/components/sections/ImpactSection";
 import ReviewsSection from "@/components/sections/ReviewsSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <StorySection />
+        <ManopSection />
         <CoffeeSection />
         <ImpactSection />
         <ReviewsSection />

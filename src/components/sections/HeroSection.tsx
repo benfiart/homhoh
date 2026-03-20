@@ -86,26 +86,19 @@ export default function HeroSection() {
             initial="hidden"
             animate="show"
           >
-            {/* Three-line heading — smaller on mobile, massive on desktop */}
+            {/* Single H1 with three visual lines for SEO */}
             <motion.h1
-              variants={clipReveal}
               className="font-serif text-[2.5rem] sm:text-7xl lg:text-9xl font-bold tracking-tight leading-[0.9] text-cream-50 hero-text-shadow"
             >
-              Mountain Coffee
-            </motion.h1>
-
-            <motion.h1
-              variants={clipReveal}
-              className="font-serif text-[2.5rem] sm:text-7xl lg:text-9xl font-bold tracking-tight leading-[0.9] text-cream-50 hero-text-shadow"
-            >
-              Mountain People
-            </motion.h1>
-
-            <motion.h1
-              variants={clipReveal}
-              className="font-serif text-[2.5rem] sm:text-7xl lg:text-9xl font-bold tracking-tight leading-[0.9] text-cream-50 hero-text-shadow"
-            >
-              Karen Tribe
+              <motion.span variants={clipReveal} className="block">
+                Mountain Coffee
+              </motion.span>
+              <motion.span variants={clipReveal} className="block">
+                Mountain People
+              </motion.span>
+              <motion.span variants={clipReveal} className="block">
+                Karen Tribe
+              </motion.span>
             </motion.h1>
           </motion.div>
         </motion.div>

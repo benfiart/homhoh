@@ -58,3 +58,23 @@
     transform: scale(1.05);
   }
 }
+
+/* Eased warm scrim — darkens bottom for text, transparent at top for faces */
+.hero-scrim {
+  background-image: linear-gradient(
+    to top,
+    hsla(15, 53%, 11%, 0.85) 0%,
+    hsla(15, 53%, 11%, 0.72) 10%,
+    hsla(15, 53%, 11%, 0.50) 25%,
+    hsla(15, 53%, 11%, 0.25) 40%,
+    hsla(15, 53%, 11%, 0.08) 55%,
+    hsla(15, 53%, 11%, 0) 70%
+  );
+}
+
+/* Hero heading text shadow for legibility without heavy overlay */
+.hero-text-shadow {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.15);
+}

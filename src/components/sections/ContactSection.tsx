@@ -20,7 +20,7 @@ export default function ContactSection() {
       <Container>
         <SectionHeading
           label="Contact"
-          title="Let\u2019s Connect"
+          title="Let&rsquo;s Connect"
           subtitle="Whether you want to learn more, find us at the market, or just say hello."
         />
 

@@ -1,15 +1,18 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { siteConfig } from "@/lib/constants";
 
-const stagger = {
-  hidden: {},
+// Cinematic clip-path reveal — each line wipes in from bottom
+const clipReveal = {
+  hidden: { clipPath: "inset(0 0 100% 0)", opacity: 0 },
   show: {
-    transition: { staggerChildren: 0.2 },
+    clipPath: "inset(0 0 0% 0)",
+    opacity: 1,
+    transition: { duration: 0.9, ease: [0.25, 1, 0.5, 1] as const },
   },
 };
 
@@ -18,116 +21,137 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 };
 
+const stagger = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+  },
+};
+
 export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check, { passive: true });
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  // Reduced parallax on mobile, multi-speed on desktop
+  const photoY = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -20 : -60]);
+  const headingY = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -40 : -160]);
+  const ctaY = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -50 : -200]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen overflow-hidden"
     >
-      {/* Background image with Ken Burns effect */}
-      <div
-        className="absolute inset-0"
-        style={{ animation: "kenBurns 20s ease-in-out infinite alternate" }}
+      {/* Background image — object-position adjusted per breakpoint */}
+      <motion.div
+        className="absolute inset-0 will-change-transform"
+        style={{
+          y: photoY,
+          animation: "kenBurns 20s ease-in-out infinite alternate",
+        }}
       >
         <Image
           src="/images/8177_0.webp"
-          alt="Jack with Manap, his mother and grandmother"
+          alt="Jack with Manap, his mother and grandmother sharing coffee on the mountain farm"
           fill
-          className="object-cover"
+          className="object-cover object-[30%_25%] sm:object-[center_25%]"
           priority
         />
-      </div>
+      </motion.div>
 
-      {/* Warm overlay */}
-      <div className="absolute inset-0 bg-brown-900/50" />
+      {/* Eased warm gradient scrim — transparent at top (faces), dark at bottom (text) */}
+      <div className="absolute inset-0 hero-scrim" />
 
-      <Container className="relative z-10">
+      {/* Content — anchored to bottom-left, editorial magazine layout */}
+      <Container className="relative z-10 min-h-screen flex flex-col justify-end pb-16 sm:pb-24 lg:pb-28">
         <motion.div
-          style={{ y: textY, opacity: textOpacity }}
-          className="text-center"
+          style={{ y: headingY, opacity: textOpacity }}
+          className="will-change-transform"
         >
           <motion.div
             variants={stagger}
             initial="hidden"
             animate="show"
-            className="flex flex-col items-center"
           >
-            <motion.span
-              variants={fadeUp}
-              className="text-xs tracking-[0.3em] uppercase text-cream-200/80 mb-6 block"
-            >
-              {siteConfig.heroLabel}
-            </motion.span>
-
+            {/* Three-line heading — smaller on mobile, massive on desktop */}
             <motion.h1
-              variants={fadeUp}
-              className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-cream-50/60"
+              variants={clipReveal}
+              className="font-serif text-[2.5rem] sm:text-7xl lg:text-9xl font-bold tracking-tight leading-[0.9] text-cream-50 hero-text-shadow"
             >
-              Mountain Coffee,
+              Mountain Coffee
             </motion.h1>
 
             <motion.h1
-              variants={fadeUp}
-              className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-cream-50/60 mt-2"
+              variants={clipReveal}
+              className="font-serif text-[2.5rem] sm:text-7xl lg:text-9xl font-bold tracking-tight leading-[0.9] text-cream-50 hero-text-shadow"
             >
               Mountain People
             </motion.h1>
 
-            <motion.h2
-              variants={fadeUp}
-              className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-cream-50/60 mt-2"
+            <motion.h1
+              variants={clipReveal}
+              className="font-serif text-[2.5rem] sm:text-7xl lg:text-9xl font-bold tracking-tight leading-[0.9] text-cream-50 hero-text-shadow"
             >
               Karen Tribe
-            </motion.h2>
+            </motion.h1>
+          </motion.div>
+        </motion.div>
 
-            <motion.p
+        {/* Subheading + CTAs */}
+        <motion.div
+          style={{ y: ctaY, opacity: textOpacity }}
+          className="will-change-transform"
+        >
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.div
               variants={fadeUp}
-              className="mt-8 max-w-xl text-cream-200/80 text-base sm:text-lg text-balance leading-relaxed"
+              className="mt-6 sm:mt-8 flex flex-row items-center gap-6 flex-wrap"
             >
-              {siteConfig.heroSubheading}
-            </motion.p>
-
-            <motion.div variants={fadeUp} className="flex gap-4 mt-10">
-              <a href="#story" className="btn-primary">
-                Our Story
-              </a>
-              <a
-                href="#where-to-buy"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-cream-50/30 text-cream-50 rounded-lg transition-all duration-200 hover:border-cream-50/60 hover:bg-cream-50/10 active:scale-[0.98] text-sm"
-              >
-                Where to Buy
-              </a>
+              <p className="max-w-lg text-cream-50/70 text-sm sm:text-lg leading-relaxed hero-text-shadow">
+                {siteConfig.heroSubheading}
+              </p>
+              <div className="flex gap-3">
+                <a href="#story" className="btn-primary text-xs sm:text-sm">
+                  Our Story
+                </a>
+                <a
+                  href="#where-to-buy"
+                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 border border-cream-50/25 text-cream-50 rounded-lg transition-all duration-200 hover:border-cream-50/50 hover:bg-cream-50/10 active:scale-[0.98] text-xs sm:text-sm backdrop-blur-sm"
+                >
+                  Where to Buy
+                </a>
+              </div>
             </motion.div>
           </motion.div>
         </motion.div>
       </Container>
 
-      {/* Scroll indicator */}
-      <motion.div
+      {/* Origin label — bottom right, hidden on mobile to avoid overlap */}
+      <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        transition={{ delay: 1.8 }}
+        className="absolute bottom-4 left-4 sm:bottom-8 sm:right-8 sm:left-auto text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-cream-50/30 hero-text-shadow z-10"
       >
-        <span className="text-[10px] tracking-[0.3em] uppercase text-cream-200/40">
-          Scroll
-        </span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-8 bg-gradient-to-b from-cream-200/60 to-transparent"
-        />
-      </motion.div>
+        {siteConfig.heroLabel}
+      </motion.span>
     </section>
   );
 }

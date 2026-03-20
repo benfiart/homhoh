@@ -1,4 +1,4 @@
-import { Mountain, Users, Leaf, Coffee, Award } from "lucide-react";
+import { Mountain, Users, Leaf, Coffee, Award, Flame } from "lucide-react";
 
 export const siteConfig = {
   name: "HomHoh Coffee",
@@ -61,6 +61,12 @@ export const coffeeCards = [
     title: "GAP Certified",
     description:
       "Certified under Thailand\u2019s Good Agricultural Practices (GAP) \u2014 standards managed by the Ministry of Agriculture ensuring safe, high-quality, and sustainable production.",
+  },
+  {
+    icon: Flame,
+    title: "The Flavor",
+    description:
+      "Rich body, high natural character, and a unique aroma. Dark roast brings a strong, intense flavor \u2014 light roast reveals a smoother, more delicate taste.",
   },
   {
     icon: Coffee,

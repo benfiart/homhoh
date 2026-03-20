@@ -4,7 +4,8 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { MapPin, Clock, Mail } from "lucide-react";
+import { contactInfo } from "@/lib/constants";
+import { Mail, Facebook } from "lucide-react";
 
 export default function WhereToBuySection() {
   return (
@@ -12,38 +13,36 @@ export default function WhereToBuySection() {
       <Container>
         <SectionHeading
           label="Where to Find Us"
-          title="At the Farmer&rsquo;s Market"
-          subtitle="Come say hello, hear the story, and take a bag of freshly roasted mountain coffee home."
+          title="Coming to Milwaukee"
+          subtitle="Freshly roasted mountain coffee, straight from the Karen Tribe families of Mae Hong Son to you."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <AnimatedSection>
             <div className="space-y-6">
               <p className="text-text-secondary text-lg leading-relaxed">
-                We roast HomHoh Coffee locally in Milwaukee and sell it fresh at
-                the farmer&apos;s market. No online store, no big retail &mdash; just us,
+                We roast HomHoh Coffee locally in Milwaukee and share it with the
+                community. No online store, no big retail &mdash; just us,
                 the coffee, and the story behind it.
               </p>
               <p className="text-text-secondary text-lg leading-relaxed">
-                Most of our customers found us through a friend. That&apos;s how we
-                like it &mdash; word of mouth, one cup at a time.
+                Most of our customers find us through a friend. That&apos;s how we
+                like it &mdash; word of mouth, one cup at a time. Get in touch
+                and we&apos;ll let you know where to find us.
               </p>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-text-secondary">
-                  <MapPin className="w-5 h-5 text-brown-600 flex-shrink-0" />
-                  {/* TODO: Update with actual market name and location */}
-                  <span>Milwaukee Farmer&apos;s Market, Milwaukee, WI</span>
-                </div>
-                <div className="flex items-center gap-3 text-text-secondary">
-                  <Clock className="w-5 h-5 text-brown-600 flex-shrink-0" />
-                  {/* TODO: Update with actual market days/hours */}
-                  <span>Saturdays, 8am &ndash; 1pm</span>
-                </div>
-              </div>
-              <div className="pt-2">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a href="#contact" className="btn-primary">
                   <Mail className="w-4 h-4" />
                   Get in Touch
+                </a>
+                <a
+                  href={contactInfo.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  <Facebook className="w-4 h-4" />
+                  Follow the Farm
                 </a>
               </div>
             </div>

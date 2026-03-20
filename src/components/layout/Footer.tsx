@@ -57,6 +57,16 @@ export default function Footer() {
               <li className="text-cream-200/60 text-sm">
                 {contactInfo.location}
               </li>
+              <li>
+                <a
+                  href={contactInfo.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cream-200/60 text-sm hover:text-cream-50 transition-colors"
+                >
+                  Follow the farm on Facebook &rarr;
+                </a>
+              </li>
             </ul>
           </div>
         </div>

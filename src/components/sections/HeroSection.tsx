@@ -71,17 +71,24 @@ export default function HeroSection() {
 
             <motion.h1
               variants={fadeUp}
-              className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-cream-50"
+              className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-cream-50/60"
             >
               Mountain Coffee,
             </motion.h1>
 
             <motion.h1
               variants={fadeUp}
-              className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-cream-50 mt-2"
+              className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-cream-50/60 mt-2"
             >
               Mountain People
             </motion.h1>
+
+            <motion.h2
+              variants={fadeUp}
+              className="font-serif text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-cream-50/60 mt-2"
+            >
+              Karen Tribe
+            </motion.h2>
 
             <motion.p
               variants={fadeUp}

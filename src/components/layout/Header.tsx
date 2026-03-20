@@ -26,10 +26,13 @@ export default function Header() {
           : "warm-glass shadow-none"
       }`}
     >
-      <nav className="flex items-center justify-between px-4 py-1.5 sm:px-5 sm:py-2">
-        {/* Wordmark */}
-        <a href="#" className="font-serif text-xl font-bold text-brown-800 tracking-tight">
-          HomHoh
+      <nav className="flex items-center justify-between px-5 py-2.5 sm:px-6 sm:py-3">
+        {/* Logo + Wordmark */}
+        <a href="#" className="flex items-center gap-2">
+          <img src="/logo.png" alt="HomHoh" className="h-10 w-auto" />
+          <span className="font-serif text-xl font-bold text-brown-800 tracking-tight">
+            HomHoh
+          </span>
         </a>
 
         {/* Desktop nav */}

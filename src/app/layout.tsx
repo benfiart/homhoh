@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: "HomHoh Coffee — Mountain Coffee, Mountain People",
   description:
     "Direct-trade coffee from 25 farming families in Mae Hong Son, Thailand to Milwaukee, Wisconsin. Every dollar returned to the people who grow it.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

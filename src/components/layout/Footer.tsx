@@ -10,9 +10,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-3 block">
-              <Image src="/logo.png" alt="HomHoh" width={106} height={56} className="h-14 w-auto brightness-0 invert" />
+              <Image src="/logo.png" alt="Siam Coffees" width={106} height={56} className="h-14 w-auto brightness-0 invert" />
               <span className="font-serif text-2xl font-bold text-cream-50">
-                HomHoh
+                Siam Coffees
               </span>
             </a>
             <p className="text-cream-200/70 text-sm leading-relaxed max-w-xs">
@@ -78,7 +78,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-cream-200/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-cream-200/50 text-xs">
-            &copy; {new Date().getFullYear()} HomHoh Coffee. All rights reserved.
+            &copy; {new Date().getFullYear()} Siam Coffees Coffee. All rights reserved.
           </p>
           <p className="text-cream-200/50 text-xs">
             A social enterprise &middot; 100% of profits returned to farmers

@@ -1,7 +1,7 @@
 import { Mountain, Users, Leaf, Coffee, Award, Flower2 } from "lucide-react";
 
 export const siteConfig = {
-  name: "HomHoh Coffee",
+  name: "Siam Coffees",
   tagline: "Mountain coffee from mountain people. Direct from Mae Hong Son, Thailand to Milwaukee, Wisconsin.",
   heroHeading: "Mountain Coffee,\nMountain People",
   heroSubheading: "25 families. Every dollar returned to the people who grow it.",
@@ -140,7 +140,7 @@ export const reviews = [
   },
   {
     quote:
-      "My friend told me about HomHoh and I had to try it. Now I tell everyone. This is how coffee should be done.",
+      "My friend told me about Siam Coffees and I had to try it. Now I tell everyone. This is how coffee should be done.",
     name: "David L.",
     title: "Word of Mouth Convert",
     business: "Milwaukee, WI",
@@ -148,7 +148,7 @@ export const reviews = [
 ];
 
 export const contactInfo = {
-  email: "hello@homhoh.com",
+  email: "hello@siamcoffees.com",
   location: "Milwaukee, Wisconsin",
   facebookUrl: "https://www.facebook.com/homhoh.coffee.3/",
 };

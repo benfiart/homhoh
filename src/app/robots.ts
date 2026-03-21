@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://homhoh.com/sitemap.xml",
+    sitemap: "https://siamcoffees.com/sitemap.xml",
   };
 }

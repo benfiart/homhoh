@@ -21,7 +21,7 @@ export default function WhereToBuySection() {
           <AnimatedSection>
             <div className="space-y-6">
               <p className="text-text-secondary text-lg leading-relaxed">
-                We roast HomHoh Coffee locally in Milwaukee and share it with the
+                We roast Siam Coffees locally in Milwaukee and share it with the
                 community. No online store, no big retail &mdash; just us,
                 the coffee, and the story behind it.
               </p>
@@ -52,7 +52,7 @@ export default function WhereToBuySection() {
             <div className="relative aspect-[3/4] max-w-xs mx-auto rounded-2xl overflow-hidden shadow-xl shadow-brown-900/10">
               <Image
                 src="/images/9187_0.webp"
-                alt="A bag of HomHoh Coffee"
+                alt="A bag of Siam Coffees"
                 fill
                 className="object-cover"
               />

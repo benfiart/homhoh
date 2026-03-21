@@ -30,9 +30,9 @@ export default function Header() {
       <nav className="flex items-center justify-between px-5 py-2.5 sm:px-6 sm:py-3">
         {/* Logo + Wordmark */}
         <a href="#" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="HomHoh" width={76} height={40} className="h-10 w-auto" />
+          <Image src="/logo.png" alt="Siam Coffees" width={76} height={40} className="h-10 w-auto" />
           <span className="font-serif text-xl font-bold text-brown-800 tracking-tight">
-            HomHoh
+            Siam Coffees
           </span>
         </a>
 

@@ -12,9 +12,9 @@ import ContactSection from "@/components/sections/ContactSection";
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "HomHoh Coffee",
-  url: "https://homhoh.com",
-  logo: "https://homhoh.com/logo.png",
+  name: "Siam Coffees",
+  url: "https://siamcoffees.com",
+  logo: "https://siamcoffees.com/logo.png",
   description:
     "Direct-trade specialty Arabica coffee from 25 Karen Tribe farming families in Mae Hong Son, Thailand. Roasted in Milwaukee, Wisconsin. 100% of profits returned to farmers.",
   address: {
@@ -26,7 +26,7 @@ const jsonLd = {
   sameAs: ["https://www.facebook.com/homhoh.coffee.3/"],
   contactPoint: {
     "@type": "ContactPoint",
-    email: "hello@homhoh.com",
+    email: "hello@siamcoffees.com",
     contactType: "customer service",
   },
 };

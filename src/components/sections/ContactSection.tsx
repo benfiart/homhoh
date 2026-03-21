@@ -105,7 +105,7 @@ export default function ContactSection() {
                     rows={4}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-cream-50 border border-cream-200 text-brown-900 placeholder:text-text-muted focus-visible:outline-none focus-visible:border-brown-600 focus-visible:ring-2 focus-visible:ring-brown-600/30 transition-colors text-sm resize-none"
-                    placeholder="Tell us about your interest in HomHoh Coffee..."
+                    placeholder="Tell us about your interest in Siam Coffees..."
                   />
                 </div>
                 <button type="submit" className="btn-primary w-full">

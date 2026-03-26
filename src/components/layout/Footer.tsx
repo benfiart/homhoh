@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-3 block">
-              <img src="/logo.svg" alt="" className="h-12 w-auto brightness-0 invert" aria-hidden="true" />
+              <img src="/logo.svg" alt="" className="h-12 w-auto" aria-hidden="true" />
               <span className="font-serif text-2xl font-bold text-cream-50">
                 Siam Coffees
               </span>

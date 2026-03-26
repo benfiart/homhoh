@@ -9,8 +9,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 py-16">
           {/* Brand */}
           <div className="space-y-6">
-            <a href="#" className="font-serif text-2xl font-bold text-cream-50 block">
-              Siam Coffees
+            <a href="#" className="flex items-center gap-3 block">
+              <img src="/logo.svg" alt="" className="h-12 w-auto brightness-0 invert" aria-hidden="true" />
+              <span className="font-serif text-2xl font-bold text-cream-50">
+                Siam Coffees
+              </span>
             </a>
             <p className="text-cream-200/70 text-sm leading-relaxed max-w-xs">
               {siteConfig.tagline}

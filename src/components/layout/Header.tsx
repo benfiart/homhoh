@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { navItems } from "@/lib/constants";
 
@@ -29,8 +28,11 @@ export default function Header() {
     >
       <nav className="flex items-center justify-between px-5 py-2.5 sm:px-6 sm:py-3">
         {/* Logo + Wordmark */}
-        <a href="#" className="font-serif text-xl font-bold text-brown-800 tracking-tight">
-          Siam Coffees
+        <a href="#" className="flex items-center gap-2.5">
+          <img src="/logo.svg" alt="" className="h-9 w-auto" aria-hidden="true" />
+          <span className="font-serif text-xl font-bold text-brown-800 tracking-tight">
+            Siam Coffees
+          </span>
         </a>
 
         {/* Desktop nav */}

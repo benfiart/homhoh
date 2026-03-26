@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { siteConfig, navItems, contactInfo } from "@/lib/constants";
 
